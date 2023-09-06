@@ -5,9 +5,8 @@ https://github.com/EkkoG/clash-for-openclash-dist
 Add this line to your /etc/opkg/customfeeds.conf
 
 ```
-src/gz ekkog_dae https://master.dl.sourceforge.net/project/ekko-openwrt-dist/clash/$ARCH/
-``````
-
+echo "src/gz ekkog_clash https://master.dl.sourceforge.net/project/ekko-openwrt-dist/clash/$ARCH/" | tee -a "/etc/opkg/customfeeds.conf"
+```
 Then run
 
 ```
