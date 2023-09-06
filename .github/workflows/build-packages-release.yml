@@ -1,0 +1,75 @@
+name: Openwrt Packages Build Bot
+on:
+  push:
+    branches: main
+    paths:
+      - '.github/workflows/build-packages-release.yml'
+      - 'patch.sh'
+      - 'do_not_build'
+      - 'packages/**'
+      - '!packages/**/github/workflows/**'
+      - '!packages/**/README*'
+      - '!packages/**/.gitignore'
+      - '!packages/**/LICENSE'
+      - '!packages/**/LICENSES'
+
+jobs:
+  buildpkg:
+    name: Build Openwrt Package
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch:
+          - x86_64-v23.05.0-rc1
+          - x86_64-v22.03.4
+          - x86_64-v21.02.5
+          - x86_64-SNAPSHOT
+          - aarch64_generic-v23.05.0-rc1
+          - aarch64_generic-v22.03.4
+          - aarch64_generic-v21.02.5
+          - aarch64_generic-SNAPSHOT
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Prepare feeds
+        run: |
+          ./patch.sh ${{ matrix.arch }}
+          PACKAGES=$(ls packages | sed 's/\///g')
+          echo "$PACKAGES" > 1.txt
+          sort 1.txt -o 1.txt
+          sort do_not_build -o do_not_build
+          comm -23 1.txt do_not_build > 2.txt
+          PACKAGES=$(cat 2.txt)
+          PACKAGES=$(echo "$PACKAGES" | tr '\n' ' ')
+          echo "PACKAGES=${PACKAGES}" >> $GITHUB_ENV
+          find . -name "Makefile" -type f -exec cat {} \;
+
+      - name: Build
+        uses: ekkog/gh-action-sdk@master
+        env:
+          ARCH: ${{ matrix.arch }}
+          KEY_BUILD: ${{ secrets.KEY_BUILD }}
+          INDEX: 1
+          IGNORE_ERRORS: 1
+          NO_SHFMT_CHECK: 1
+          V: 99
+          PACKAGES: ${{ env.PACKAGES }}
+
+
+      - name: List files
+        run: |
+          ls -R bin/
+
+
+      - name: Upload feed
+        uses: Pendect/action-rsyncer@8e05ffa5c93e5d9c9b167796b26044d2c616b2b9
+        with:
+          flags: '-ahvHP'
+          options: '--delete'
+          src: 'bin/packages/*/action/'
+          dest: '${{ secrets.SF_USER }}@frs.sourceforge.net:/home/frs/project/ekko-openwrt-dist/clash/${{ matrix.arch }}/'
+        env:
+          DEPLOY_KEY: ${{ secrets.SF_KEY }}
