@@ -2,7 +2,7 @@ https://github.com/EkkoG/clash-for-openclash-dist
 
 ## Usage
 
-Add this line to your /etc/opkg/customfeeds.conf
+Run command to add feed
 
 Supported ARCH please see https://sourceforge.net/projects/ekko-openwrt-dist/files/clash/
 
