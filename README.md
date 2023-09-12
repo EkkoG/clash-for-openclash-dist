@@ -7,13 +7,13 @@ Supported ARCH please see https://sourceforge.net/projects/ekko-openwrt-dist/fil
 Run command to add feed
 
 ```
-echo "src/gz ekkog_clash https://master.dl.sourceforge.net/project/ekko-openwrt-dist/clash/$ARCH" | tee -a "/etc/opkg/customfeeds.conf"
+echo "src/gz ekkog_clash https://downloads.sourceforge.net/project/ekko-openwrt-dist/clash/$ARCH" | tee -a "/etc/opkg/customfeeds.conf"
 ```
 
 Or use Cloudflare CDN
 
 ```
-echo "src/gz ekkog_clash https://ghproxy.imciel.com/https://master.dl.sourceforge.net/project/ekko-openwrt-dist/clash/$ARCH" | tee -a "/etc/opkg/customfeeds.conf"
+echo "src/gz ekkog_clash https://ghproxy.imciel.com/https://downloads.sourceforge.net/project/ekko-openwrt-dist/clash/$ARCH" | tee -a "/etc/opkg/customfeeds.conf"
 ```
 
 Then install the signature key, please see
