@@ -1,6 +1,11 @@
 https://github.com/EkkoG/clash-for-openclash-dist
 
-## Usage
+## Add by script
+```bash
+sh -c "$(curl https://raw.fgit.cf/EkkoG/openwrt-dist/master/add-feed.sh)" -- clash
+```
+
+## Manual add
 
 Supported ARCH please see https://sourceforge.net/projects/ekko-openwrt-dist/files/clash/ and replace $ARCH with the one you need.
 
@@ -21,7 +26,7 @@ Then install the signature key, please see
 https://github.com/EkkoG/openwrt-dist#install-sign-key
 
 
-Then run
+## Install or upgrade
 
 ```
 opkg update
