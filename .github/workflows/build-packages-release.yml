@@ -20,13 +20,13 @@ jobs:
     strategy:
       matrix:
         arch:
-          - x86_64-v23.05.0-rc1
-          - x86_64-v22.03.4
-          - x86_64-v21.02.5
+          - x86_64-v23.05.0-rc3
+          - x86_64-v22.03.5
+          - x86_64-v21.02.7
           - x86_64-SNAPSHOT
-          - aarch64_generic-v23.05.0-rc1
-          - aarch64_generic-v22.03.4
-          - aarch64_generic-v21.02.5
+          - aarch64_generic-v23.05.0-rc3
+          - aarch64_generic-v22.03.5
+          - aarch64_generic-v21.02.7
           - aarch64_generic-SNAPSHOT
 
     steps:
