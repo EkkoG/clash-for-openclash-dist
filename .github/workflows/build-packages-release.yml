@@ -1,5 +1,6 @@
 name: Openwrt Packages Build Bot
 on:
+  workflow_dispatch: null
   push:
     branches: main
     paths:
