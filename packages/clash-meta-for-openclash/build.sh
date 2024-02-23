@@ -6,7 +6,7 @@ echo "src-link openwrt_packages $(pwd)/openwrt-packages" >> ./feeds.conf
 mkdir openwrt-packages
 
 git clone --depth=1 https://github.com/openwrt/packages official-packages
-sudo cp -r official-packages/lang/golang openwrt-packages/golang
+cp -r official-packages/lang/golang openwrt-packages/golang
 rm -rf official-packages
 
 cp clash-meta-for-openclash openwrt-packages/clash-meta-for-openclash -r

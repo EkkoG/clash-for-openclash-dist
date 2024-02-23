@@ -1,9 +1,9 @@
 services:
   sdk:
-    image: openwrtorg/sdk:x86_64-openwrt-21.02
+    image: openwrt/sdk:x86_64-openwrt-23.05
     volumes:
-      - .:/home/build/openwrt/clash-meta-for-openclash
-      - ./bin:/home/build/openwrt/bin
-      - ./build.sh:/home/build/openwrt/build.sh
-    command: /home/build/openwrt/build.sh
+      - .:/builder/clash-meta-for-openclash
+      - ./bin:/builder/bin
+      - ./build.sh:/builder/build.sh
+    command: /builder/build.sh
       
