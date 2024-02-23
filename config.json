@@ -6,9 +6,6 @@
         "URL": "https://github.com/EkkoG/clash-meta-for-openclash.git"
     },
     {
-        "URL": "https://github.com/EkkoG/clash-for-openclash.git"
-    },
-    {
         "URL": "https://github.com/openwrt/packages.git",
         "subdir": [
             {
