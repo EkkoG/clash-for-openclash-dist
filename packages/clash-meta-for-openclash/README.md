@@ -1,4 +1,4 @@
-A [Clash.Meta](https://github.com/MetaCubeX/Clash.Meta) OpenWrt package.
+A [mihomo](https://github.com/MetaCubeX/mihomo) OpenWrt package.
 
 ## Build
 
