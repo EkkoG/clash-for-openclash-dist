@@ -1,23 +1,23 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=clash-meta-alpha-for-openclash
-PKG_VERSION:=null
+PKG_VERSION:=a37548c
 PKG_RELEASE:=1
 
-PKG_SOURCE:=Clash.Meta-Prerelease-Alpha.tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/MetaCubeX/Clash.Meta/tar.gz/Prerelease-Alpha?
+PKG_SOURCE:=mihomo-Prerelease-Alpha.tar.gz
+PKG_SOURCE_URL:=https://codeload.github.com/MetaCubeX/mihomo/tar.gz/Prerelease-Alpha?
 PKG_HASH:=30c89294c65c03a04e198ccd7532f21b5451da9d59f7b15ccda5e012068b02a2
 
 PKG_MAINTAINER:=EkkoG <beijiu572@gmail.om>
 PKG_LICENSE:=GPL-3.0-only
 PKG_LICENSE_FILES:=LICENSE
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/Clash.Meta-Prerelease-Alpha
+PKG_BUILD_DIR:=$(BUILD_DIR)/Prerelease-Alpha
 PKG_BUILD_DEPENDS:=golang/host
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 
-GO_PKG:=github.com/Dreamacro/clash
+GO_PKG:=github.com/metacubex/mihomo
 GO_PKG_BUILD_PKG:=$(GO_PKG)
 GO_PKG_LDFLAGS_X:= \
 	$(GO_PKG)/constant.Version=$(PKG_VERSION)
@@ -33,7 +33,7 @@ endef
 define Package/$(PKG_NAME)
 	$(call Package/$(PKG_NAME)/template)
 	TITLE:=A rule-based tunnel in Go
-	URL:=https://github.com/MetaCubeX/Clash.Meta
+	URL:=https://github.com/MetaCubeX/mihomo
 	DEPENDS:=$(GO_ARCH_DEPENDS)
 endef
 
