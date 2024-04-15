@@ -2,7 +2,7 @@ https://github.com/EkkoG/clash-for-openclash-dist
 
 ## Add by script
 ```bash
-sh -c "$(curl https://raw.fgit.cf/EkkoG/openwrt-dist/master/add-feed.sh)" -- clash
+sh -c "$(curl https://fastly.jsdelivr.net/gh/EkkoG/openwrt-dist@master/add-feed.sh)" -- clash
 ```
 
 ## Manual add
