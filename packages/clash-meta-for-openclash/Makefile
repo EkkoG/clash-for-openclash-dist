@@ -6,7 +6,7 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=mihomo-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/MetaCubeX/mihomo/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=498c1667c78ffab2301788a2776f4477e38a49c4c4f4661430cc10e2478dae3a
+PKG_HASH:=205f6695ad19e232227c7e31da157860da9b2c4678900af9ebaf7e46c00c68c0
 
 PKG_MAINTAINER:=EkkoG <beijiu572@gmail.om>
 PKG_LICENSE:=GPL-3.0-only
