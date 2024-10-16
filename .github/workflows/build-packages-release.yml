@@ -73,6 +73,6 @@ jobs:
           flags: '-ahvHP'
           options: '--delete'
           src: 'bin/packages/*/action/'
-          dest: '${{ secrets.SF_USER }}@frs.sourceforge.net:/home/frs/project/ekko-openwrt-dist/clash/${{ env.final_arch }}/'
+          dest: '${{ secrets.SF_USER }}@frs.sourceforge.net:/home/frs/project/ekko-openwrt-dist/mihomo/${{ env.final_arch }}/'
         env:
           DEPLOY_KEY: ${{ secrets.SF_KEY }}
