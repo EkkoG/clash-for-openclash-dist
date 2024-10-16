@@ -21,13 +21,7 @@ jobs:
       matrix:
         arch:
           - x86_64-v23.05.2
-          - x86_64-v22.03.5
-          - x86_64-v21.02.7
-          - x86_64-SNAPSHOT
           - aarch64_generic-v23.05.2
-          - aarch64_generic-v22.03.5
-          - aarch64_generic-v21.02.7
-          - aarch64_generic-SNAPSHOT
           - aarch64_cortex-a53-v23.05.2
 
     steps:
