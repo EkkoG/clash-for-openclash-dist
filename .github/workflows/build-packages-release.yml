@@ -47,6 +47,8 @@ jobs:
           PACKAGES=$(echo "$PACKAGES" | tr '\n' ' ')
           echo "PACKAGES=${PACKAGES}" >> $GITHUB_ENV
           find . -name "Makefile" -type f -exec cat {} \;
+          final_arch=$(echo ${{ matrix.arch }} | cut -d '-' -f 1)
+          echo "final_arch=${final_arch}" >> $GITHUB_ENV
 
       - name: Build
         uses: ekkog/gh-action-sdk@master
@@ -71,6 +73,6 @@ jobs:
           flags: '-ahvHP'
           options: '--delete'
           src: 'bin/packages/*/action/'
-          dest: '${{ secrets.SF_USER }}@frs.sourceforge.net:/home/frs/project/ekko-openwrt-dist/clash/${{ matrix.arch }}/'
+          dest: '${{ secrets.SF_USER }}@frs.sourceforge.net:/home/frs/project/ekko-openwrt-dist/clash/${{ env.final_arch }}/'
         env:
           DEPLOY_KEY: ${{ secrets.SF_KEY }}
