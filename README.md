@@ -2,23 +2,23 @@ https://github.com/EkkoG/clash-for-openclash-dist
 
 ## Add by script
 ```bash
-sh -c "$(curl https://fastly.jsdelivr.net/gh/EkkoG/openwrt-dist@master/add-feed.sh)" -- mohomo
+sh -c "$(curl https://fastly.jsdelivr.net/gh/EkkoG/openwrt-dist@master/add-feed.sh)" -- mihomo
 ```
 
 ## Manual add
 
-Supported ARCH please see https://sourceforge.net/projects/ekko-openwrt-dist/files/mohomo/ and replace $ARCH with the one you need.
+Supported ARCH please see https://sourceforge.net/projects/ekko-openwrt-dist/files/mihomo/ and replace $ARCH with the one you need.
 
 Run command to add feed
 
 ```
-echo "src/gz ekkog_mohomo https://downloads.sourceforge.net/project/ekko-openwrt-dist/mohomo/$ARCH" | tee -a "/etc/opkg/customfeeds.conf"
+echo "src/gz ekkog_mihomo https://downloads.sourceforge.net/project/ekko-openwrt-dist/mihomo/$ARCH" | tee -a "/etc/opkg/customfeeds.conf"
 ```
 
 Or use Cloudflare CDN
 
 ```
-echo "src/gz ekkog_mohomo https://ghproxy.imciel.com/https://downloads.sourceforge.net/project/ekko-openwrt-dist/mohomo/$ARCH" | tee -a "/etc/opkg/customfeeds.conf"
+echo "src/gz ekkog_mihomo https://ghproxy.imciel.com/https://downloads.sourceforge.net/project/ekko-openwrt-dist/mihomo/$ARCH" | tee -a "/etc/opkg/customfeeds.conf"
 ```
 
 Then install the signature key, please see
